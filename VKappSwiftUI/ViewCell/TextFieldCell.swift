@@ -9,13 +9,13 @@ import SwiftUI
 
 struct TextFieldCell: View {
     
+    // MARK: - Properties
+    @StateObject var manager: LoginViewModel
+    @State var isTapped = false
+    
+    let textLimit: Bool
     var icon: String
     var title: String
-
-    @StateObject var manager: LoginViewModel
-
-    @State var focusedField: (Bool) -> ()
-    @State var isTapped = false
     
     var body: some View {
         VStack {
@@ -23,12 +23,10 @@ struct TextFieldCell: View {
                 HStack(spacing: 15) {
                     TextField("", text: $manager.text) { (status) in
                         if status {
-                            focusedField(status)
                             withAnimation(.easeIn) {
                                 isTapped = true
                             }
                         } else {
-                            focusedField(status)
                             if manager.text == "" {
                                 withAnimation(.easeOut) {
                                     isTapped = false
@@ -61,15 +59,17 @@ struct TextFieldCell: View {
             .background(Color.gray.opacity(0.09))
             .cornerRadius(5)
             
-            HStack {
-                Spacer()
-                Text("\(manager.text.count)/15")
-                    .font(.caption)
-                    .foregroundColor(manager.text.count >= 15 ? .red : .gray)
-                    .padding(.trailing)
-                    .padding(.top, 4)
+            if textLimit {
+                HStack {
+                    Spacer()
+                    Text("\(manager.text.count)/15")
+                        .font(.caption)
+                        .foregroundColor(manager.text.count >= 15 ? .red : .gray)
+                        .padding(.trailing)
+                        .padding(.top, 4)
+                }
             }
         }
-        .padding()
+        .padding(.bottom)
     }
 }

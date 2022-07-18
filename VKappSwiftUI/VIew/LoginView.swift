@@ -6,60 +6,59 @@
 //
 
 import SwiftUI
+import Combine
 
 struct LoginView: View {
-
+    
+    // MARK: - Properties
     @StateObject var userText = LoginViewModel()
     @StateObject var passwordText = LoginViewModel()
-    @State var isTapped = false
+    
+    // MARK: - Private properties
+    @State private var keyboardHeight: CGFloat = 0
     
     var body: some View {
-        Group {
-            VStack(spacing: 5) {
-                
+        VStack(spacing: 5) {
+            
+            RoundImage(width: 150, height: 150) {
                 Image("Logo")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 150, height: 150)
-                    .padding(.vertical, 100.0)
+            }.padding(.vertical, 100.0)
+            
+            TextFieldCell(textLimit: false,
+                          icon: "person",
+                          title: "Логин",
+                          manager: userText)
+            
+            TextFieldCell(textLimit: false,
+                          icon: "lock",
+                          title: "Пароль",
+                          manager: passwordText)
+            
+            Button(action: { print(userText.text,
+                                   passwordText.text) },
+                   label: {
+                Text("Войти")
+                    .foregroundColor(.white)
+                    .font(.system(size: 19, weight: .semibold))
+                    .frame(width: UIScreen.main.bounds.width - 30,
+                           height: 40)
+                    .background(Color.blue)
+                    .cornerRadius(5)
                 
-                TextFieldCell(icon: "person",
-                              title: "Логин",
-                              manager: userText,
-                              focusedField: { tapValue in
-                    isTapped = tapValue
-                })
-
-                TextFieldCell(icon: "lock",
-                              title: "Пароль",
-                              manager: passwordText,
-                              focusedField: { tapValue in
-                    isTapped = tapValue
-                })
-                
-                Button(action: { print(userText.text, passwordText.text) },
-                       label: {
-                    Text("Войти")
-                        .foregroundColor(.white)
-                        .font(.system(size: 19, weight: .semibold))
-                        .frame(width: UIScreen.main.bounds.width - 30,
-                               height: 40)
-                        .background(Color.blue)
-                        .cornerRadius(5)
-                    
-                }).padding()
-                
-                Spacer()
-            }
+            }).padding()
+            
+            Spacer()
         }
-        .offset(CGSize(width: 0,
-                       height: !isTapped ? 0 : -(UIScreen.main.bounds.width / 2)))
+        .padding()
+        .padding(.bottom, 70)
+        .keyboardAdaptive()
+        
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
-            
+        
     }
 }
