@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8657EBF42883A50C007C31AD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8657EBF32883A50C007C31AD /* Extensions.swift */; };
 		8657EBF72883ABEB007C31AD /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8657EBF62883ABEB007C31AD /* KeyboardAdaptive.swift */; };
 		8657EBF92883B0FA007C31AD /* GroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8657EBF82883B0FA007C31AD /* GroupViewCell.swift */; };
 		8657EBFB2883B123007C31AD /* FriendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8657EBFA2883B123007C31AD /* FriendViewCell.swift */; };
 		8657EBFD2883B5EC007C31AD /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8657EBFC2883B5EC007C31AD /* FriendView.swift */; };
 		8657EBFF2883B979007C31AD /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8657EBFE2883B979007C31AD /* RoundImage.swift */; };
 		8657EC012883BB3C007C31AD /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8657EC002883BB3C007C31AD /* GroupView.swift */; };
+		86EB26C42886A51F00F535DF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EB26C32886A51F00F535DF /* Extensions.swift */; };
 		86F4DBDE2880DE2300F28254 /* VKappSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DBDD2880DE2300F28254 /* VKappSwiftUIApp.swift */; };
 		86F4DBE02880DE2300F28254 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DBDF2880DE2300F28254 /* ContentView.swift */; };
 		86F4DBE22880DE2500F28254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86F4DBE12880DE2500F28254 /* Assets.xcassets */; };
@@ -41,13 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8657EBF32883A50C007C31AD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../../../../Documents/Extensions.swift; sourceTree = "<group>"; };
 		8657EBF62883ABEB007C31AD /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
 		8657EBF82883B0FA007C31AD /* GroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewCell.swift; sourceTree = "<group>"; };
 		8657EBFA2883B123007C31AD /* FriendViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewCell.swift; sourceTree = "<group>"; };
 		8657EBFC2883B5EC007C31AD /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
 		8657EBFE2883B979007C31AD /* RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		8657EC002883BB3C007C31AD /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
+		86EB26C32886A51F00F535DF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		86F4DBDA2880DE2300F28254 /* VKappSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKappSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F4DBDD2880DE2300F28254 /* VKappSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKappSwiftUIApp.swift; sourceTree = "<group>"; };
 		86F4DBDF2880DE2300F28254 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,14 +85,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8657EBF22883A4F0007C31AD /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8657EBF32883A50C007C31AD /* Extensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		8657EBF52883ABDC007C31AD /* Utill */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +92,14 @@
 				8657EBFE2883B979007C31AD /* RoundImage.swift */,
 			);
 			path = Utill;
+			sourceTree = "<group>";
+		};
+		86EB26C22886A4D700F535DF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				86EB26C32886A51F00F535DF /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		86F4DBD12880DE2300F28254 = {
@@ -123,8 +123,8 @@
 		86F4DBDC2880DE2300F28254 /* VKappSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				86EB26C22886A4D700F535DF /* Extensions */,
 				8657EBF52883ABDC007C31AD /* Utill */,
-				8657EBF22883A4F0007C31AD /* Extensions */,
 				86F4DC0B2880EA2500F28254 /* ViewCell */,
 				86F4DC072880E90D00F28254 /* VIew */,
 				86F4DC0F2880EAD300F28254 /* ViewModel */,
@@ -305,11 +305,11 @@
 				86F4DC0A2880EA0800F28254 /* LoginView.swift in Sources */,
 				8657EBFF2883B979007C31AD /* RoundImage.swift in Sources */,
 				8657EC012883BB3C007C31AD /* GroupView.swift in Sources */,
-				8657EBF42883A50C007C31AD /* Extensions.swift in Sources */,
 				86F4DBE02880DE2300F28254 /* ContentView.swift in Sources */,
 				8657EBFB2883B123007C31AD /* FriendViewCell.swift in Sources */,
 				8657EBF72883ABEB007C31AD /* KeyboardAdaptive.swift in Sources */,
 				86F4DBDE2880DE2300F28254 /* VKappSwiftUIApp.swift in Sources */,
+				86EB26C42886A51F00F535DF /* Extensions.swift in Sources */,
 				86F4DC112880EB0300F28254 /* LoginViewModel.swift in Sources */,
 				8657EBF92883B0FA007C31AD /* GroupViewCell.swift in Sources */,
 				8657EBFD2883B5EC007C31AD /* FriendView.swift in Sources */,
