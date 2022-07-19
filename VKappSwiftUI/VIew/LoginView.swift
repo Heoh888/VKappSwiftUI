@@ -24,15 +24,13 @@ struct LoginView: View {
                 Image("Logo")
             }.padding(.vertical, 100.0)
             
-            TextFieldCell(textLimit: false,
+            TextFieldCell(manager: userText, textLimit: false,
                           icon: "person",
-                          title: "Логин",
-                          manager: userText)
+                          title: "Логин")
             
-            TextFieldCell(textLimit: false,
+            TextFieldCell(manager: passwordText, textLimit: false,
                           icon: "lock",
-                          title: "Пароль",
-                          manager: passwordText)
+                          title: "Пароль")
             
             Button(action: { print(userText.text,
                                    passwordText.text) },
