@@ -11,29 +11,34 @@ import Combine
 struct LoginView: View {
     
     // MARK: - Properties
-    @StateObject var userText = LoginViewModel()
-    @StateObject var passwordText = LoginViewModel()
+    @StateObject var login = LoginViewModel()
+    @StateObject var password = LoginViewModel()
     
     // MARK: - Private properties
     @State private var keyboardHeight: CGFloat = 0
+    @State private var showIncorrentCredentialsWarning = false
     
     var body: some View {
         VStack(spacing: 5) {
             
             RoundImage(width: 150, height: 150) {
                 Image("Logo")
-            }.padding(.vertical, 100.0)
+            }
+            .padding(.vertical, 100.0)
             
-            TextFieldCell(manager: userText, textLimit: false,
+            TextFieldCell(manager: login,
+                          textLimit: false,
+                          showLine: true,
                           icon: "person",
                           title: "Логин")
             
-            TextFieldCell(manager: passwordText, textLimit: false,
+            TextFieldCell(manager: password,
+                          textLimit: false,
+                          showLine: true,
                           icon: "lock",
                           title: "Пароль")
             
-            Button(action: { print(userText.text,
-                                   passwordText.text) },
+            Button(action: { verifyLoginData() },
                    label: {
                 Text("Войти")
                     .foregroundColor(.white)
@@ -50,9 +55,28 @@ struct LoginView: View {
         .padding()
         .padding(.bottom, 70)
         .keyboardAdaptive()
+        .onTapGesture {
+//            UIApplication.shared.endEditing()
+        }.alert(isPresented: $showIncorrentCredentialsWarning,
+                content: {
+            Alert(title: Text("Error"),
+                  message: Text("Incorrent Login/Password was entered"))
+        })
+        
+    }
+    
+    private func verifyLoginData() {
+        if login.text == "bar" && password.text == "foo" {
+            // authorizing user
+        } else {
+            showIncorrentCredentialsWarning = true
+        }
+        // сбрасываем пароль, после проверки для лучшего UX
+        password.text = ""
         
     }
 }
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

@@ -14,6 +14,7 @@ struct TextFieldCell: View {
     @State var isTapped = false
     
     let textLimit: Bool
+    let showLine: Bool
     var icon: String
     var title: String
     
@@ -40,20 +41,11 @@ struct TextFieldCell: View {
                     }
                 }
                 .padding(.top, isTapped ? 15 : 0)
-                .background(
-                    Text(title)
-                        .scaleEffect(isTapped ? 0.8 : 1)
-                        .offset(x: isTapped ? -7 : 0, y: isTapped ? -15 : 0)
-                        .foregroundColor(isTapped ? .accentColor : .gray)
-                    , alignment: .leading
-                )
+                .background(backgroundText, alignment: .leading)
                 .padding(.horizontal)
                 
-                Rectangle()
-                    .fill(isTapped ? Color.accentColor : Color.gray)
-                    .opacity(isTapped ? 1 : 0.5)
-                    .frame(height: 1)
-                    .padding(.top, 10)
+                rectangleLine
+                
             })
             .padding(.top, 12)
             .background(Color.gray.opacity(0.09))
@@ -71,5 +63,22 @@ struct TextFieldCell: View {
             }
         }
         .padding(.bottom)
+    }
+}
+
+private extension TextFieldCell {
+    var backgroundText: some View {
+        Text(title)
+            .scaleEffect(isTapped ? 0.8 : 1)
+            .offset(x: isTapped ? -7 : 0, y: isTapped ? -15 : 0)
+            .foregroundColor(isTapped ? .accentColor : .gray)
+    }
+    
+    var rectangleLine: some View {
+        Rectangle()
+            .fill(isTapped ? Color.accentColor : Color.gray)
+            .opacity(showLine ? isTapped ? 1 : 0.5 : 0)
+            .frame(height: 1)
+            .padding(.top, 10)
     }
 }
