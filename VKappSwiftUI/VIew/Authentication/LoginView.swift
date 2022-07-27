@@ -11,8 +11,9 @@ import Combine
 struct LoginView: View {
     
     // MARK: - Properties
-    @StateObject var login = LoginViewModel()
-    @StateObject var password = LoginViewModel()
+    @State var login = TextFieldCellModel()
+    @State var password = TextFieldCellModel()
+    @StateObject var viewModel: AuthViewModel
     
     // MARK: - Private properties
     @State private var keyboardHeight: CGFloat = 0
@@ -24,7 +25,8 @@ struct LoginView: View {
             RoundImage(width: 150, height: 150) {
                 Image("Logo")
             }
-            .padding(.vertical, 100.0)
+            .padding(.bottom, 150)
+            .padding(.top, 50)
             
             TextFieldCell(manager: login,
                           textLimit: false,
@@ -38,7 +40,7 @@ struct LoginView: View {
                           icon: "lock",
                           title: "Пароль")
             
-            Button(action: { verifyLoginData() },
+            Button(action: { viewModel.verifyLoginData(login: login.text, password: password.text) },
                    label: {
                 Text("Войти")
                     .foregroundColor(.white)
@@ -57,30 +59,9 @@ struct LoginView: View {
         .keyboardAdaptive()
         .onTapGesture {
 //            UIApplication.shared.endEditing()
-        }.alert(isPresented: $showIncorrentCredentialsWarning,
-                content: {
-            Alert(title: Text("Error"),
-                  message: Text("Incorrent Login/Password was entered"))
+        }.alert(isPresented: $viewModel.showIncorrentCredentialsWarning,
+                content: { Alert(title: Text("Error"),
+                                 message: Text("Incorrent Login/Password was entered"))
         })
-        
-    }
-    
-    private func verifyLoginData() {
-        if login.text == "bar" && password.text == "foo" {
-            // authorizing user
-        } else {
-            showIncorrentCredentialsWarning = true
-        }
-        // сбрасываем пароль, после проверки для лучшего UX
-        password.text = ""
-        
-    }
-}
-
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-        
     }
 }

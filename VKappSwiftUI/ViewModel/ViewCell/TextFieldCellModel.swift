@@ -1,13 +1,14 @@
 //
-//  LoginViewModel.swift
+//  TextFieldCellModel.swift
 //  VKappSwiftUI
 //
-//  Created by Алексей Ходаков on 15.07.2022.
+//  Created by Алексей Ходаков on 22.07.2022.
 //
 
 import Foundation
 
-class LoginViewModel: ObservableObject {
+class TextFieldCellModel: ObservableObject {
+
     @Published var text = "" {
         didSet {
             if text.count > 15 && oldValue.count <= 15 {

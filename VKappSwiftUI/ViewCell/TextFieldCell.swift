@@ -10,7 +10,7 @@ import SwiftUI
 struct TextFieldCell: View {
     
     // MARK: - Properties
-    @StateObject var manager: LoginViewModel
+    @StateObject var manager: TextFieldCellModel
     @State var isTapped = false
     
     let textLimit: Bool

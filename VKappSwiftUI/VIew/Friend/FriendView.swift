@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct FriendView: View {
+    
+    var viewModel = FriendViewModel()
+    
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(0 ..< 10 ) { _ in
-                    FriendViewCell()
+                ForEach(viewModel.friends) { user in
+                    NavigationLink {
+                        UserCollectionView(model: user)
+                    } label: {
+                        FriendViewCell(model: user)
+                    }.foregroundColor(.black)
                 }
             }
+            .padding(.top)
         }
     }
 }

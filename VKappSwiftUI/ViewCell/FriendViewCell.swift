@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct FriendViewCell: View {
+    
+    var model: UserModel
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 RoundImage(width: 50, height: 50) {
-                    Image("Joker")
+                    Image(model.imageName)
                 }
                 
                 VStack(alignment: .leading) {
-                    Text("Joker")
+                    Text(model.name)
                         .font(.system(size: 17,
                                       weight: .semibold))
-                    Text("Totally crazy guy")
+                    Text(model.status)
                         .foregroundColor(.gray)
                         .font(.system(size: 12,
                                       weight: .regular))
@@ -30,11 +33,5 @@ struct FriendViewCell: View {
             }
             .padding([.leading, .bottom, .trailing])
         }
-    }
-}
-
-struct FriendViewCell_Previews: PreviewProvider {
-    static var previews: some View {
-        FriendViewCell()
     }
 }
