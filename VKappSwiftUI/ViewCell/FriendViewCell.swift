@@ -26,12 +26,27 @@ struct FriendViewCell: View {
                         .foregroundColor(.gray)
                         .font(.system(size: 12,
                                       weight: .regular))
-                    Divider()
                 }
                 
                 Spacer()
             }
-            .padding([.leading, .bottom, .trailing])
+            .padding(5.0)
+            .padding(.leading)
+            Divider()
+            
         }
+        .background(.white)
+    }
+}
+
+struct FriendViewCell_Previews: PreviewProvider {
+    static var previews: some View {
+        FriendViewCell(model: UserModel(name: "Joker1",
+                                        imageName: "Joker",
+                                        status: "Totally crazy guy1",
+                                        collectionImage: [UserCollectionModel(text: "Totally crazy guy1", imageName: "Joker"),
+                                                          UserCollectionModel(text: "Totally crazy guy2", imageName: "Joker"),
+                                                          UserCollectionModel(text: "Totally crazy guy3", imageName: "Joker"),
+                                                          UserCollectionModel(text: "Totally crazy guy4", imageName: "Joker")]))
     }
 }

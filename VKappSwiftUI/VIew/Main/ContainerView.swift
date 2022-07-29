@@ -10,18 +10,18 @@ import SwiftUI
 struct ContainerView: View {
     
     @StateObject var viewModel: AuthViewModel
-    @State var selectedIndex = 0
     
-    var body: some View { NavigationView {
-        HStack {
-            LoginView(viewModel: viewModel)
-            
-            //MARK: - NAVIGATION LINKS
-            NavigationLink(destination: MainTabView(selectedIndex: $selectedIndex),
-                           isActive: $viewModel.isUserLoggedIn) {
-                EmptyView()
+    var body: some View {
+        NavigationView {
+            HStack {
+                LoginView(viewModel: viewModel)
+                
+                //MARK: - NAVIGATION LINKS
+                NavigationLink(destination: MainView(),
+                               isActive: $viewModel.isUserLoggedIn) {
+                    EmptyView()
+                }
             }
         }
-    }
     }
 }

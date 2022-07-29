@@ -11,6 +11,7 @@ import Combine
 struct LoginView: View {
     
     // MARK: - Properties
+    let widthSize = UIScreen.main.bounds.width - 30
     @State var login = TextFieldCellModel()
     @State var password = TextFieldCellModel()
     @StateObject var viewModel: AuthViewModel
@@ -33,19 +34,21 @@ struct LoginView: View {
                           showLine: true,
                           icon: "person",
                           title: "Логин")
+            .frame(width: widthSize)
             
             TextFieldCell(manager: password,
                           textLimit: false,
                           showLine: true,
                           icon: "lock",
                           title: "Пароль")
+            .frame(width: widthSize)
             
             Button(action: { viewModel.verifyLoginData(login: login.text, password: password.text) },
                    label: {
                 Text("Войти")
                     .foregroundColor(.white)
                     .font(.system(size: 19, weight: .semibold))
-                    .frame(width: UIScreen.main.bounds.width - 30,
+                    .frame(width: widthSize,
                            height: 40)
                     .background(Color.blue)
                     .cornerRadius(5)

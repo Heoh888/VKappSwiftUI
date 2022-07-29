@@ -12,17 +12,15 @@ struct FriendView: View {
     var viewModel = FriendViewModel()
     
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(viewModel.friends) { user in
-                    NavigationLink {
-                        UserCollectionView(model: user)
-                    } label: {
-                        FriendViewCell(model: user)
-                    }.foregroundColor(.black)
+        ScrollView(showsIndicators: false) {
+            ForEach(viewModel.friends) { user in
+                NavigationLink {
+                    UserCollectionView(model: user)
+                } label: {
+                    FriendViewCell(model: user)
                 }
+                .foregroundColor(.black)
             }
-            .padding(.top)
         }
     }
 }

@@ -18,9 +18,13 @@
 		8684640B2890C0E6001B45EE /* UserCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684640A2890C0E6001B45EE /* UserCollectionView.swift */; };
 		8684640E2890C2D2001B45EE /* UserCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684640D2890C2D2001B45EE /* UserCollectionModel.swift */; };
 		868464102890C5EE001B45EE /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684640F2890C5EE001B45EE /* UserCollectionViewCell.swift */; };
-		86921F282889BF34003E8CBE /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86921F272889BF34003E8CBE /* MainTabView.swift */; };
+		86921F282889BF34003E8CBE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86921F272889BF34003E8CBE /* MainView.swift */; };
 		86921F2F288A158C003E8CBE /* TextFieldCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86921F2E288A158C003E8CBE /* TextFieldCellModel.swift */; };
 		86A3670D288EDF36000EEE55 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3670C288EDF36000EEE55 /* ContainerView.swift */; };
+		86AFD8E728934E2A0055A01D /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AFD8E628934E2A0055A01D /* CustomTabBar.swift */; };
+		86AFD8E928934E3B0055A01D /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AFD8E828934E3B0055A01D /* TabBarButton.swift */; };
+		86AFD8EB28934E4F0055A01D /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AFD8EA28934E4F0055A01D /* TabCurve.swift */; };
+		86AFD8EE28935BF10055A01D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AFD8ED28935BF10055A01D /* MainViewModel.swift */; };
 		86C72F632890E1DD00E4038A /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C72F622890E1DD00E4038A /* NewsView.swift */; };
 		86EB26C42886A51F00F535DF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EB26C32886A51F00F535DF /* Extensions.swift */; };
 		86F4DBDE2880DE2300F28254 /* VKappSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DBDD2880DE2300F28254 /* VKappSwiftUIApp.swift */; };
@@ -61,9 +65,13 @@
 		8684640A2890C0E6001B45EE /* UserCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionView.swift; sourceTree = "<group>"; };
 		8684640D2890C2D2001B45EE /* UserCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionModel.swift; sourceTree = "<group>"; };
 		8684640F2890C5EE001B45EE /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
-		86921F272889BF34003E8CBE /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		86921F272889BF34003E8CBE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		86921F2E288A158C003E8CBE /* TextFieldCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCellModel.swift; sourceTree = "<group>"; };
 		86A3670C288EDF36000EEE55 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		86AFD8E628934E2A0055A01D /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		86AFD8E828934E3B0055A01D /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		86AFD8EA28934E4F0055A01D /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
+		86AFD8ED28935BF10055A01D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		86C72F622890E1DD00E4038A /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		86EB26C32886A51F00F535DF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		86F4DBDA2880DE2300F28254 /* VKappSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKappSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				86F4DBDF2880DE2300F28254 /* ContentView.swift */,
-				86921F272889BF34003E8CBE /* MainTabView.swift */,
+				86921F272889BF34003E8CBE /* MainView.swift */,
 				86A3670C288EDF36000EEE55 /* ContainerView.swift */,
 			);
 			path = Main;
@@ -188,6 +196,32 @@
 			path = ViewCell;
 			sourceTree = "<group>";
 		};
+		86AFD8E428934DE40055A01D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				86AFD8E528934E030055A01D /* CustomTabBar */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		86AFD8E528934E030055A01D /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				86AFD8E628934E2A0055A01D /* CustomTabBar.swift */,
+				86AFD8E828934E3B0055A01D /* TabBarButton.swift */,
+				86AFD8EA28934E4F0055A01D /* TabCurve.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		86AFD8EC28935BE10055A01D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				86AFD8ED28935BF10055A01D /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		86C72F612890E1C500E4038A /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +259,7 @@
 		86F4DBDC2880DE2300F28254 /* VKappSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				86AFD8E428934DE40055A01D /* Components */,
 				86EB26C22886A4D700F535DF /* Extensions */,
 				8657EBF52883ABDC007C31AD /* Utill */,
 				868464042890BB58001B45EE /* Model */,
@@ -272,6 +307,7 @@
 		86F4DC0F2880EAD300F28254 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				86AFD8EC28935BE10055A01D /* Main */,
 				868464072890BC74001B45EE /* Friend */,
 				86921F2D288A156F003E8CBE /* ViewCell */,
 				86921F2C2889C31E003E8CBE /* Authentication */,
@@ -411,8 +447,10 @@
 			files = (
 				868464102890C5EE001B45EE /* UserCollectionViewCell.swift in Sources */,
 				86F4DC0A2880EA0800F28254 /* LoginView.swift in Sources */,
+				86AFD8E928934E3B0055A01D /* TabBarButton.swift in Sources */,
 				8657EBFF2883B979007C31AD /* RoundImage.swift in Sources */,
 				86C72F632890E1DD00E4038A /* NewsView.swift in Sources */,
+				86AFD8EE28935BF10055A01D /* MainViewModel.swift in Sources */,
 				868464092890BCAD001B45EE /* FriendViewModel.swift in Sources */,
 				8684640E2890C2D2001B45EE /* UserCollectionModel.swift in Sources */,
 				8657EC012883BB3C007C31AD /* GroupView.swift in Sources */,
@@ -421,13 +459,15 @@
 				86A3670D288EDF36000EEE55 /* ContainerView.swift in Sources */,
 				8657EBF72883ABEB007C31AD /* KeyboardAdaptive.swift in Sources */,
 				86F4DBDE2880DE2300F28254 /* VKappSwiftUIApp.swift in Sources */,
+				86AFD8EB28934E4F0055A01D /* TabCurve.swift in Sources */,
 				868464062890BBEC001B45EE /* UserModel.swift in Sources */,
 				86921F2F288A158C003E8CBE /* TextFieldCellModel.swift in Sources */,
+				86AFD8E728934E2A0055A01D /* CustomTabBar.swift in Sources */,
 				8684640B2890C0E6001B45EE /* UserCollectionView.swift in Sources */,
 				86EB26C42886A51F00F535DF /* Extensions.swift in Sources */,
 				86F4DC112880EB0300F28254 /* AuthViewModel.swift in Sources */,
 				8657EBF92883B0FA007C31AD /* GroupViewCell.swift in Sources */,
-				86921F282889BF34003E8CBE /* MainTabView.swift in Sources */,
+				86921F282889BF34003E8CBE /* MainView.swift in Sources */,
 				8657EBFD2883B5EC007C31AD /* FriendView.swift in Sources */,
 				86F4DC0D2880EA3C00F28254 /* TextFieldCell.swift in Sources */,
 			);
@@ -593,6 +633,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -622,6 +663,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

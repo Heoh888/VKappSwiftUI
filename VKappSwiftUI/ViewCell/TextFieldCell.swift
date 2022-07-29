@@ -35,6 +35,7 @@ struct TextFieldCell: View {
                             }
                         }
                     }
+                    Spacer()
                     if !isTapped {
                         Image(systemName: icon)
                             .opacity(0.3)
